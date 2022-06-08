@@ -5,57 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gudang"
         mc:Ignorable="d"
-        Title="Gudang" Height="550" Width="1000">
-    <Grid Margin="0,-3,0,3">
-        <Label Content=" DAFTAR ISI GUDANG" HorizontalAlignment="Center" Height="33" Margin="0,22,0,0" VerticalAlignment="Top" Width="220" FontFamily="Shruti" FontSize="18"/>
-        <GroupBox HorizontalAlignment="Left" Height="200" Header="Tambah Barang" Margin="10,63,0,0" VerticalAlignment="Top" Width="294" FontSize="14"/>
-        <GroupBox HorizontalAlignment="Left" Height="200" Header="Edit Barang" Margin="10,298,0,0" VerticalAlignment="Top" Width="294" FontSize="14"/>
-        <Label Content="Nama" HorizontalAlignment="Left" Margin="22,87,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Berat (gram)&#xD;&#xA;" HorizontalAlignment="Left" Margin="22,121,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="7.64,1.251" Height="31"/>
-        <Label Content="Isi" HorizontalAlignment="Left" Margin="22,155,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Kadaluarsa" HorizontalAlignment="Left" Margin="22,189,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="114,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <GroupBox HorizontalAlignment="Left" Height="360" Header="List Barang di Gudang" Margin="330,73,0,0" VerticalAlignment="Top" Width="648" FontSize="14">
-            <Table CellSpacing="5">
-                <Table.Columns>
-                    <TableColumn/>
-                    <TableColumn/>
-                    <TableColumn/>
-                    <TableColumn/>
-                </Table.Columns>
+        Title="Gudang" Height="529" Width="1124">
+    <Window.Resources>
 
-                <TableRowGroup>
-                    <TableRow Background="Blue">
-                        <TableCell>
-                            <Paragraph FontSize="14" FontWeight="Bold" TextAlignment="Center">No</Paragraph></TableCell>
-                        <TableCell>
-                            <Paragraph FontSize="14" FontWeight="Bold" TextAlignment="Center">Nama</Paragraph>
-                        </TableCell>
-                        <TableCell>
-                            <Paragraph FontSize="14" FontWeight="Bold" TextAlignment="Center">Berat (Gram)</Paragraph>
-                        </TableCell>
-                        <TableCell>
-                            <Paragraph FontSize="14" FontWeight="Bold" TextAlignment="Center">Kadaluarsa</Paragraph>
-                        </TableCell>
-                    </TableRow>
-                </TableRowGroup>
-            </Table>
+
+        <!-- membuat sebuah style yang akan mempengaruhi semua TextBlock -->
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <!-- Membuat Style dari TextBlock -->
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+           TargetType="TextBlock"
+           x:Key="TitleText">
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.0" Color="#90DDDD" />
+                            <GradientStop Offset="1.0" Color="#5BFFFF" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,-3,0,-6">
+
+        <!-- Header WPF -->
+        <StackPanel Margin="0,0,20,0" Height="73" VerticalAlignment="Top">
+            <TextBlock Style="{StaticResource TitleText}" x:Name="textblock1" Margin="0,22,0,0"><Run Text="Daftar Isi Gudang"/></TextBlock>
+        </StackPanel>
+
+        <!-- Penamaan Label -->
+        <GroupBox HorizontalAlignment="Left" Height="200" Header="Edit Barang" Margin="10,90,0,0" VerticalAlignment="Top" Width="320" FontSize="14" BorderThickness="2" BorderBrush="Aqua"/>
+        <Label Content="Nama" HorizontalAlignment="Left" Margin="22,114,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Berat (gram)&#xD;&#xA;" HorizontalAlignment="Left" Margin="22,148,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="7.64,1.251" Height="31"/>
+        <Label Content="Isi" HorizontalAlignment="Left" Margin="22,182,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Kadaluarsa" HorizontalAlignment="Left" Margin="22,247,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Tempat" HorizontalAlignment="Left" Margin="22,216,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Number" HorizontalAlignment="Left" Margin="22,308,0,0" VerticalAlignment="Top" FontSize="14"/>
+
+        <!-- Membuat Tabel -->
+        <GroupBox HorizontalAlignment="Left" Height="383" Header="List Barang" Margin="366,74,0,0" VerticalAlignment="Top" Width="748" FontSize="14" BorderThickness="2" BorderBrush="Aqua">
+            <DataGrid Name="Datagrid" Margin="29,0,17,0" Height="343"></DataGrid>
         </GroupBox>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="114,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="114,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <DatePicker HorizontalAlignment="Left" Margin="114,189,0,0" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <Button Content="Simpan" HorizontalAlignment="Left" Margin="114,221,0,0" VerticalAlignment="Top" FontSize="14" Width="175" Click="Button_Click"/>
-        <Label Content="Nama" HorizontalAlignment="Left" Margin="22,322,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Berat (gram)&#xA;" HorizontalAlignment="Left" Margin="22,356,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="7.64,1.251" Height="31"/>
-        <Label Content="Isi" HorizontalAlignment="Left" Margin="22,390,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Kadaluarsa" HorizontalAlignment="Left" Margin="22,424,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="114,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="114,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="114,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <DatePicker HorizontalAlignment="Left" Margin="114,424,0,0" VerticalAlignment="Top" Width="175" FontSize="14"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="114,456,0,0" VerticalAlignment="Top" FontSize="14" Width="175" Click="Button_Click"/>
-        <Button Content="Hapus" HorizontalAlignment="Left" Margin="860,441,0,0" VerticalAlignment="Top" Height="38" Width="102" FontSize="14"/>
 
+        <!-- Membuat TextBox sebagai sarana untuk mengisi form -->
+        <TextBox x:Name="nama_br_txtbx" HorizontalAlignment="Left" Height="29" Margin="140,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
+        <TextBox x:Name="berat_br_txtbx" HorizontalAlignment="Left" Height="29" Margin="140,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
+        <TextBox x:Name="isi_br_txtbx" HorizontalAlignment="Left" Height="29" Margin="140,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
+        <TextBox x:Name="tempat_br_txtbx" HorizontalAlignment="Left" Height="29" Margin="140,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
+        <TextBox x:Name="search_id" HorizontalAlignment="Left" Height="29" Margin="140,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="14"/>
+        <DatePicker x:Name="kadaluarsa_date" HorizontalAlignment="Left" Margin="140,250,0,0" VerticalAlignment="Top" Width="175" FontSize="14"/>
+
+        <!-- Membuat Button -->
+        <Button x:Name="add_btn" Content="Simpan" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" FontSize="14" Width="116" Click="add_btn_click" />
+        <Button x:Name="update_btn" Content="Edit" HorizontalAlignment="Left" Margin="188,365,0,0" VerticalAlignment="Top" FontSize="14" Width="116" Click="update_btn_click"/>
+        <Button x:Name="clear_btn" Content="Reset/Clear" HorizontalAlignment="Left" Margin="188,403,0,0" VerticalAlignment="Top" FontSize="14" Width="116" Click="clear_btn_click"/>
+        <Button x:Name="delete_btn" Content="Hapus" HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" FontSize="14" Width="116" Click="delete_btn_click"/>
 
     </Grid>
 </Window>
