@@ -47,7 +47,7 @@
         <Label Content="Isi" HorizontalAlignment="Left" Margin="22,182,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Kadaluarsa" HorizontalAlignment="Left" Margin="22,247,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Tempat" HorizontalAlignment="Left" Margin="22,216,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Number" HorizontalAlignment="Left" Margin="22,308,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Nomor" HorizontalAlignment="Left" Margin="22,308,0,0" VerticalAlignment="Top" FontSize="14"/>
 
         <!-- Membuat Tabel -->
         <GroupBox HorizontalAlignment="Left" Height="383" Header="List Barang" Margin="366,74,0,0" VerticalAlignment="Top" Width="748" FontSize="14" BorderThickness="2" BorderBrush="Aqua">
