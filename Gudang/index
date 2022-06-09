@@ -1,0 +1,15 @@
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate_animated animate_fadeInDown">Selamat datang di <span>Collaundry</span></h2>
+          <p class="animate_animated animate_fadeInUp">Kami disini menerima untuk pengambilan cucian ke rumah pemesan, ataupun pemesan secara langsung datang ke tempat kami</p>
+          <a href="#about" class="btn-get-started animate_animated animate_fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate_animated animate_fadeInDown">Selamat datang di <span>Collaundry</span></h2>
+          <p class="animate_animated animate_fadeInUp">Moto kami yaitu "Kenyamanan dan Kepuasan kalian adalah penyemangat kami"</p>
+          <a href="#about" class="btn-get-started animate_animated animate_fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
